@@ -1,0 +1,47 @@
+﻿@model List<MvcTodoApp.Models.TaskItem> 
+ 
+<!DOCTYPE html> 
+<html lang="ar" dir="rtl"> 
+<head> 
+    <meta charset="utf-8" /> 
+    <title>تطبيق المهام اليومية- MVC</title> 
+    <style>
+    body {
+        direction : rtl;
+        text-align:right;
+    }
+    </style>
+</head> 
+<body> 
+    <h1>قائمة المهام اليومية</h1> 
+    <ul> 
+        @foreach (var task in Model) 
+        { 
+            <li> 
+                @if(task.IsComplete) 
+                { 
+                    <s>@task.Title</s> 
+                } 
+                else 
+                { 
+                    @task.Title 
+                    <form method="post" asp-action="CompleteTask" style="display:inline;"> 
+                        <input type="hidden" name="id" value="@task.Id" /> 
+                        <button type="submit">اكتملت</button> 
+                    </form> 
+ 
+                    <form method="post" asp-action="EditTask" style="display:inline; margin-right:10px;">
+                        <input type="hidden" name="id" value="@task.Id" />
+                        <input type="text" name="newTitle" placeholder="عنوان جديد" />
+                        <button type="submit">تعديل</button>
+                    </form>
+                } 
+            </li> 
+        } 
+    </ul> 
+ 
+    <form method="post" asp-action="AddTask"> 
+        <input type="text" name="title" placeholder="أضف مهمة جديدة" /> 
+        <button type="submit">إضافة</button> 
+    </form> 
+</body>
