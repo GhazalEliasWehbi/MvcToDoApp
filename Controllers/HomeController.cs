@@ -7,7 +7,7 @@ namespace MvcTodoApp.Controllers
 { 
     public class HomeController : Controller 
     { 
-        //  )ةركاذلا يف( تانايبلا ةدعاقل ةاكاحم ةمئاق 
+        //  قائمة المحاكاة لقاعدة البيانات
         private static List<TaskItem> tasks = new List<TaskItem> 
         { 
             new TaskItem { Id = 1, Title = "MVC Design Pattern تدرب على ", IsComplete = false }, 
@@ -16,7 +16,7 @@ namespace MvcTodoApp.Controllers
         }; 
  
         /// <summary> 
-        /// ماهملل ةيسيئرلا ةمئاقلا ضرعي. 
+        /// يعرض القائمة الرئيسية للمهام
         /// </summary> 
         public IActionResult Index() 
         { 
@@ -24,7 +24,7 @@ namespace MvcTodoApp.Controllers
         } 
  
         /// <summary> 
-        /// ةديدج ةمهم ةفاضإ. 
+        /// إضافة مهمة جديدة
         /// </summary> 
         [HttpPost] 
         public IActionResult AddTask(string title) 
@@ -39,7 +39,7 @@ namespace MvcTodoApp.Controllers
         } 
  
         /// <summary> 
-        /// ةلمتكمك ةمهم نييعت. 
+        /// تعيين مهمة كمكتملة
         /// </summary> 
         [HttpPost] 
         public IActionResult CompleteTask(int id) 
@@ -51,20 +51,20 @@ namespace MvcTodoApp.Controllers
         } 
  
         /// <summary>
-        /// /// ةمهملا ناونع ليدعت. 
+        /// /// تعديل عنوان المهمة
         /// </summary> 
-        /// <param name="id"> ةمهملا فرعم</param> 
-        /// <param name="newTitle">ديدجلا ناونعلا</param> 
+        /// <param name="id"> معرف المهمة</param> 
+        /// <param name="newTitle">العنوان الجديد</param> 
         [HttpPost] 
     public IActionResult EditTask(int id, string newTitle)
 {
-    // مادختساب ةمهملا نع ثحبا id
+    // ابحث عن المهمة باستخدام id
     var task = tasks.FirstOrDefault(t => t.Id == id);
 
-    // نأو ةدوجوم ةمهملا نأ نم دكأت newTitle  غراف ريغ
+    // تأكد من ان المهمة موجودة و ان العنوان غير فارغ
     if (task != null && !string.IsNullOrEmpty(newTitle))
     {
-        // ةمهملا ناونع لدع
+        // عدل عنوان المهمة
         task.Title = newTitle;
     }
 
