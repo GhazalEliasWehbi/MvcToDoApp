@@ -28,3 +28,4 @@ C:\Users\PC\Desktop\الفصل الثاني\هندسة 2\MvcToDoApp\obj\Debug\ne
 C:\Users\PC\Desktop\الفصل الثاني\هندسة 2\MvcToDoApp\obj\Debug\net8.0\MvcTodoApp.pdb
 C:\Users\PC\Desktop\الفصل الثاني\هندسة 2\MvcToDoApp\obj\Debug\net8.0\MvcTodoApp.genruntimeconfig.cache
 C:\Users\PC\Desktop\الفصل الثاني\هندسة 2\MvcToDoApp\obj\Debug\net8.0\ref\MvcTodoApp.dll
+C:\Users\PC\Desktop\الفصل الثاني\هندسة 2\MvcToDoApp\obj\Debug\net8.0\MvcTodoApp.sourcelink.json
